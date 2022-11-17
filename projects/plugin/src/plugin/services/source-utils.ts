@@ -443,6 +443,7 @@ export class SourceUtils {
 
     videoMetadata.isCam = title.match(/hdcam/gi) === null && releaseTitle.match(/hdcam/gi) !== null;
     videoMetadata.is3D = title.match(/3D/gi) === null && releaseTitle.match(/3D/gi) !== null;
+    videoMetadata.isDV = title.match(/DoVi|D.Vision|DV[^DVD]/gi) === null && releaseTitle.match(/DoVi|D.Vision|DV[^DVD]/gi) !== null;
 
     return videoMetadata;
   }

@@ -18,4 +18,5 @@ export class BaseSource {
 export interface SourceVideoMetadata {
   is3D: boolean;
   isCam: boolean;
+  isDV: boolean;
 }

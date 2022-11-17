@@ -240,6 +240,12 @@ export abstract class TorrentsFromProviderBaseQuery {
         return false;
       }
 
+      if (torrent.videoMetaData.isDV) {
+        logData('Exclude from', torrent.provider, torrent.title, 'cause DV');
+        return false;
+      }
+
+
       return true;
     });
   }
