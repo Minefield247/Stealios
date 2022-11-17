@@ -36,25 +36,6 @@ export class TorrentGetUrlQuery {
           return null;
         }
 
-        if (_html.match(/href=["|']?(magnet[^"|']+)/)) {
-          return _html.match(/href=["|']?(magnet[^"|']+)/)[1];
-        }
-        if (_html.match(/http(.*?).torrent["\']/)) {
-          return _html.match(/http(.*?).torrent["\']/).shift();
-        }
-        if (_html.match(/href="(.*?).torrent["\']/)) {
-          const torrentUrl = _html.match(/href="(.*?).torrent["\']/).pop() + '.torrent';
-          if (torrentUrl.match('http') !== null) {
-            return torrentUrl;
-          }
-
-          const domain = getDomainFromUrl(subPageUrl);
-
-          let url = (subPageUrl.match('https') !== null ? 'https://' : 'http://') + domain;
-
-          url += torrentUrl[0] === '/' ? torrentUrl : '/' + torrentUrl;
-          return url;
-        }
         if (_html.match(/>([a-zA-Z0-9]{40})</)) {
           const infoHash = _html.match(/>([a-zA-Z0-9]{40})</)[1];
           return 'magnet:?xt=urn:btih:'+infoHash;
