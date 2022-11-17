@@ -1,8 +1,8 @@
 {
   "$schema": "../../../node_modules/@wako-app/mobile-sdk/dist/manifest-schema.json",
   "version": "4.2.7",
-  "id": "plugin.helios",
-  "name": "Helios",
+  "id": "plugin.Stealios",
+  "name": "Stealios",
   "description": "Helios is a FREE and open-source third-party add-on developed by the community. It is a source finder, it scrapes third-party sites (called providers) that you have to provide and are publicly available on the internet.",
   "author": "Davy",
   "actions": ["movies", "episodes", "episodes-item-option", "file-explorer"],
